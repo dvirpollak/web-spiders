@@ -46,9 +46,8 @@ for row in rows:
             else:
                 data.append(cell.text)
         all_data.append(data)
-        print(data)
 
-with open('data.csv', 'w') as csvfile:
+with open('problems/data.csv', 'w') as csvfile:
     fieldnames = ['Problem Name', 'Link', 'Topic', 'Difficulty', 'Competency']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
