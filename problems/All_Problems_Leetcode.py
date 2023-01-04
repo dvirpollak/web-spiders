@@ -32,6 +32,7 @@ for row in rows:
     data = []
     if len(cells) > 0:
         imgs = cells[5].find_all('img')
+        cells[5].clear()
         for img in imgs:
             data_tip = img.get('data-tip')
             cells[5].append(data_tip[9:-5])
@@ -43,8 +44,11 @@ for row in rows:
                 continue
             elif i == 2:
                  data.append(cell)
+            # elif i == 4:
+            #     data.append(cell)
             else:
                 data.append(cell.text)
+      
         all_data.append(data)
 
 with open('problems/data.csv', 'w') as csvfile:
